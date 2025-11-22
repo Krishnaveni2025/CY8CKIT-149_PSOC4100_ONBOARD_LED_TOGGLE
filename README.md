@@ -1,6 +1,31 @@
 # Bare-Metal Firmware on PSoC 4100S Plus (Cortex-M0+)
 
-This repository contains a complete bare-metal firmware project built from scratch for the **Infineon PSoC 4100S Plus (ARM Cortex-M0+)**.  
+This repository contains a complete bare-metal firmware project built from scratch for the **CY8CKIT-149 PSoC 4100S Plus (ARM Cortex-M0+)**.
 It demonstrates how to set up a custom startup routine, linker script, and Makefile without relying on vendor HALs or libraries.
 
----
+## Project Structure
+
+### main.c
+Contains the bare-metal application code.
+- Configures **Port 1.2** as a GPIO output.
+- Toggles **P1.2** in an infinite loop (software delay).
+
+### startup_psoc4.c
+Contains the vector table and system startup code.
+- **Vector Table**: The first word (4 bytes) stores the initial Main Stack Pointer (MSP) value. The subsequent words store the entry point addresses for exception handlers (Reset, NMI, HardFault, etc.).
+- **Reset_Handler**:
+    - Copies the `.data` section from FLASH to RAM.
+    - Initializes the `.bss` section to zero.
+    - Calls `main()`.
+- **Default_Handler**: A default infinite loop handler for unexpected interrupts.
+
+### linker.ld
+The linker script that defines the memory layout (Flash and RAM regions) and section placement.
+
+### Makefile
+The build script to compile the project using `arm-none-eabi-gcc` and flash it using OpenOCD.
+
+## Usage
+
+1. **Build**: Run `make` to compile the project.
+2. **Flash**: Run `make program` to flash the firmware to the device.
