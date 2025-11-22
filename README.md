@@ -10,7 +10,7 @@ Contains the bare-metal application code.
 - Configures **Port 1.2** as a GPIO output.
 - Toggles **P1.2** in an infinite loop (software delay).
 
-### startup_psoc4.c
+### psoc_startup.c
 Contains the vector table and system startup code.
 - **Vector Table**: The first word (4 bytes) stores the initial Main Stack Pointer (MSP) value. The subsequent words store the entry point addresses for exception handlers (Reset, NMI, HardFault, etc.).
 - **Reset_Handler**:
@@ -19,12 +19,12 @@ Contains the vector table and system startup code.
     - Calls `main()`.
 - **Default_Handler**: A default infinite loop handler for unexpected interrupts.
 
-### linker.ld
+### psoclinker.ld
 The linker script that defines the memory layout (Flash and RAM regions) and section placement.
 
 ### Makefile
 The build script to compile the project using `arm-none-eabi-gcc` and flash it using OpenOCD.
-
+generates main.o, psoc_startup.o, blinky.elf, blinky.map, blinky.hex, main.exe
 ## Usage
 
 1. **Build**: Run `make` to compile the project.
