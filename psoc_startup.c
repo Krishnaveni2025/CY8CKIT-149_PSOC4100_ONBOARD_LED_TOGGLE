@@ -33,8 +33,8 @@ const void *vector_table[] = {
     Default_Handler,     // PendSV Handler
     Default_Handler,     // SysTick Handler
     
-    // External Interrupts (PSoC 4 specific - filling with Default_Handler)
-    // PSoC 4100S Plus has up to 32 external interrupts.
+    // External Interrupts (PSoC 4100S Plus specific - filling with Default_Handler)
+    // PSoC 4100S Plus has up to 32 external interrupts ( IRQ0 to IRQ31)
     Default_Handler, Default_Handler, Default_Handler, Default_Handler,
     Default_Handler, Default_Handler, Default_Handler, Default_Handler,
     Default_Handler, Default_Handler, Default_Handler, Default_Handler,
