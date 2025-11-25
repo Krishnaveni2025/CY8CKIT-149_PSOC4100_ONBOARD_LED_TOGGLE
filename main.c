@@ -10,10 +10,10 @@ int main(void)
 {
     // Configure P1.2 as GPIO
     // HSIOM: Set P1.2 to GPIO mode (0)
-    *HSIOM_PORT_SEL1 &= ~(0x0F << (PIN * 4)); //it is not required to configure this register, by default every PORT is selected as GPIO peripheral  
-    *HSIOM_PORT_SEL1 |= (0x00 << (PIN * 4));
+    //*HSIOM_PORT_SEL1 &= ~(0x0F << (PIN * 4)); //it is not required to configure this register, by default every PORT is selected as GPIO peripheral  
+    //*HSIOM_PORT_SEL1 |= (0x00 << (PIN * 4));
 
-    // PC: Set P1.2 to Strong Drive mode (6)
+    // PC: Set P1.2 to Strong Drive mode (0x6) there are total 8 different modes
     *GPIO_PORT1_PC &= ~(0x07 << (PIN * 3));
     *GPIO_PORT1_PC |= (0x06 << (PIN * 3)); 
 
