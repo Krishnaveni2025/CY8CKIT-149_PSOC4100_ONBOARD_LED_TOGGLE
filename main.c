@@ -1,6 +1,6 @@
 #include <stdint.h>
 
-// Register Definitions for Port 1
+// Register Definitions for Port 1 go through the technical reference manual
 volatile uint32_t *HSIOM_PORT_SEL1 = (uint32_t *)0x40020004; // Port 1 selection register
 volatile uint32_t *GPIO_PORT1_PC = (uint32_t *)0x40040108;   // Port 1 configuration register
 volatile uint32_t *GPIO_PORT1_DR = (uint32_t *)0x40040100;   // Port 1 output data register
@@ -13,7 +13,7 @@ int main(void)
     //*HSIOM_PORT_SEL1 &= ~(0x0F << (PIN * 4)); //it is not required to configure this register, by default every PORT is selected as GPIO peripheral  
     //*HSIOM_PORT_SEL1 |= (0x00 << (PIN * 4));
 
-    // PC: Set P1.2 to Strong Drive mode (0x6) there are total 8 different modes
+    // PC: Set P1.2 to Strong Drive mode (0x6) there are total 8 different modes so 3 bit are required
     *GPIO_PORT1_PC &= ~(0x07 << (PIN * 3));
     *GPIO_PORT1_PC |= (0x06 << (PIN * 3)); 
 
