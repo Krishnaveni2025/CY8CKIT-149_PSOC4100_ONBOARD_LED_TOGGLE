@@ -29,3 +29,6 @@ generates main.o, psoc_startup.o, blinky.elf, blinky.map, blinky.hex, main.exe
 
 1. **Build**: Run `make` to compile the project.
 2. **Flash**: Run `make program` to flash the firmware to the device.
+
+
+https://www.linkedin.com/posts/krishnavenipurne_embeddedsystems-baremetal-firmware-activity-7398047546297745408-PczJ?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD5xtIcBWRoURnxLdPDVfPUYctLEuQPLKBc
