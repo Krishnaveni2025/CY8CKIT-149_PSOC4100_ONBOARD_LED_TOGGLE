@@ -35,3 +35,7 @@ https://www.linkedin.com/posts/krishnavenipurne_embeddedsystems-baremetal-firmwa
 
 https://github.com/user-attachments/assets/abf28f8f-d582-4f76-aad9-b847e4d3fd49
 
+
+https://github.com/user-attachments/assets/bf8ee675-6f24-44f6-a512-b36d41cfe59d
+
+
